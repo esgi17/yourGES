@@ -1,0 +1,19 @@
+<%= form_with(model: classe) do |form| %> 
+	<div class="field">
+		<div class="field"> 
+			<%= form.label :name, 'Nom' %>
+			<%= form.text_field :name %>
+		</div>
+		<div class="field"> 
+			<%= form.label :nbstudents, 'Nombre d\'élèves' %>
+			<%= form.text_field :nbstudents %>
+		</div>
+		<div class="field"> 
+			<%= form.label :number, 'Numero de Classe' %>
+			<%= form.text_field :number %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= form.submit 'Enregistrer' %>
+	</div>
+<% end %>

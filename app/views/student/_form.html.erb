@@ -1,0 +1,19 @@
+<%= form_with(model: student) do |form| %> 
+	<div class="field">
+		<div class="field"> 
+			<%= form.label :name, 'Nom' %>
+			<%= form.text_field :name %>
+		</div>
+		<div class="field"> 
+			<%= form.label :surname, 'Prenom' %>
+			<%= form.text_field :surname %>
+		</div>
+		<div class="field"> 
+			<%= form.label :birthDate, 'Date de naissance' %>
+			<%= form.Date :birthDate %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= form.submit 'Enregistrer' %>
+	</div>
+<% end %>

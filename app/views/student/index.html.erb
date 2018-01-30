@@ -1,0 +1,35 @@
+<p> <%= link_to 'Retour', accueil_index_path %>
+<h1> Liste des étudiants </h1>
+
+<table>
+	<thread>
+		<tr>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Date de naissance</th>
+			<th>Classe</th>
+		</tr>
+	</thread>
+	<tbody>
+		<% @student.each do |student|%>
+		<tr>
+			<td><%= student.name %> </td>
+			<td><%= student.surname %> </td>
+			<td><%= student.birthDate %> </td>
+			<!--<td><%= student.classe %> </td>-->
+			
+			<td>
+			<%= link_to 'Afficher', classe %>
+			<%= link_to 'Modifier', edit_class_path(classe) %>
+			<%= link_to 'Supprimer', classe,
+			method: :delete, 
+			data: { confirm: ' Etes-vous sur ?'} %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<p> 
+<%= link_to ' Ajouter un étudiant', new_student_path %>
+</p>
