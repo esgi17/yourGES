@@ -1,34 +1,4 @@
-<p> <%= link_to 'Retour', accueil_index_path %> </p>
-<h1>Liste des Classes</h1>
-
-<table>
-	<thread>
-		<tr>
-			<th>Nom</th>
-			<th>Numero de Classe</th>
-			<th>Nombre d'élèves</th>
-		</tr>
-	</thread>
-	<tbody>
-		<% @classes.each do |classe|%>
-		<tr>
-			<td><%= classe.name %> </td>
-			<td><%= classe.number %> </td>
-			<td><%= classe.nbstudents %> élèves</td>
-			
-			<td>
-			<%= link_to 'Afficher', classe %>
-			<%= link_to 'Modifier', edit_class_path(classe) %>
-			<%= link_to 'Supprimer', classe,
-			method: :delete, 
-			data: { confirm: ' Etes-vous sur ?'} %>
-			</td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-
-<p> 
-<%= link_to ' Ajouter une Classe', new_class_path %>
-</p>
-
+<% @classes = Classe.all %>
+<% @classes.each do |user| %>
+  <%= classe.name %><br/>
+<% end %>
